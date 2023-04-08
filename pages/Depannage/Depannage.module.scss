@@ -1,0 +1,66 @@
+.Services {
+    
+
+    div {
+
+        margin-top: 100px;
+
+        h1 {
+            font-family: 'Rubik';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 48px;
+            line-height: 30px;
+
+            color: #000000;
+
+            margin-bottom: 50px;
+        }
+
+        p {
+            margin-left: 20px;
+        }
+
+        .Choice {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 30px;
+
+            nav {
+                padding: 20px 30px;
+                text-align: center;
+                border: 2px solid #DDDDDD;
+                border-radius: 10px;
+
+                h2 {
+                    margin-top: 20px;
+                    font-family: 'Rubik';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 30px;
+                    
+                    color: #000000;
+                }
+
+                &:hover {
+                    border: 2px solid #0780BE;
+
+                    h2 {
+                        color: #0780BE;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .Services {
+        div {
+            text-align: center;
+        }
+    }
+}

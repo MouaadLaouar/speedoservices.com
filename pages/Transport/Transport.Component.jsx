@@ -1,10 +1,15 @@
-import Style from './Services.module.scss'
+import Style from './Transport.module.scss'
 import { Container } from '@chakra-ui/react'
-import Customer from '../../Assets/customer.png'
-import Deal from '../../Assets/deal.png'
+import Customer from '@/Assets/customer.png'
+import Deal from '@/Assets/deal.png'
 import Image from 'next/image'
+import DataServices from '@/Helpers/Services'
 
-export default function Services({Title, Desc}) {
+
+export default function Transport() {
+    const Title = DataServices[0].Title
+    const Desc = DataServices[0].Description
+
   return (
     <div className={ Style.Services }>
         <Container maxW="1200px">
