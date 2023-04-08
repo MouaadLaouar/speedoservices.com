@@ -1,0 +1,137 @@
+.Footer {
+    background-color:#F8F8F8;
+    padding-top: 60px;
+
+    .Content {
+
+        display: flex;
+        justify-content: space-between;
+
+        .Left {
+
+            nav {
+                display: flex;
+                align-items: center;
+                
+                h1 {
+                    margin-left: 10px;
+                    font-family: 'Rubik';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 24px;
+                    
+                    color: #0B132A;
+                }
+            }
+
+            p {
+                margin-top: 20px;
+                width: 340px;
+                height: 61.57px;
+                
+                font-family: 'Rubik';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 30px;
+                
+                color: #4F5665;
+            }
+
+            .Icons {
+                margin-top: 60px;
+                display: flex;
+
+                a {
+                    margin: 0px 15px 0px 0px;
+                }
+            }
+        }
+
+        .Right {
+            display: flex;
+            padding-top: 20px;
+
+            div {
+                margin: 0px 30px;
+
+                h1 {
+                    width: 84px;
+                    height: 24px;
+                    
+                    font-family: 'Rubik';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 24px;
+                    
+                    color: #0B132A;
+                }
+
+                ul {
+                    margin-top: 20px;
+
+                    li {
+                        list-style: none;
+
+                        font-family: 'Rubik';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 30px;
+                        
+                        color: #4F5665;
+                    }
+                }
+            }
+        }
+
+    }
+
+    h3 {
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .Footer {
+        text-align: center;
+
+        .Content {
+            flex-direction: column;
+            text-align: center;
+    
+            .Left {
+                nav {
+                    justify-content: center;
+                }
+
+                p {
+                    width: 100%;
+                }
+
+                .Icons {
+                    justify-content: center;
+                }
+            }
+
+            .Right {
+                justify-content: space-around;
+                
+                div {
+                    margin: 0px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        }
+
+        h3 {
+            margin: 20px 0px;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.NavBar {
+    margin-top: 20px;
+    height: 60px;
+
+    .Logo {
+        display: flex;
+        align-items: center;
+
+        h1 {
+            margin-left: 10px;
+            font-family: 'Rubik';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            
+            color: #0B132A;
+        }
+    }
+
+    ul {
+        display: flex;
+
+        li {
+            margin: 0px 10px;
+            list-style: none;
+            font-family: 'Rubik';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            
+            color: #4F5665;
+        }
+    }
+
+    
+}
+
+.MenuMobile {
+    margin-left: 20px;
+
+    li {
+        list-style: none;
+        margin: 20px 0px;
+
+        font-style: normal;
+        font-family: 'Rubik';
+        font-size: 16px;
+        font-weight: 400;
+        
+        line-height: 19px;
+
+        color: #4F5665;
+    }
+}
+

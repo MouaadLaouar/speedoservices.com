@@ -1,0 +1,213 @@
+.Home {
+    .Section1 {
+        height: 50vh;
+        h1 {
+            margin-top: 120px;
+
+            width: 555px;
+            height: 140px;
+            
+            font-family: 'Rubik';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 50px;
+            line-height: 70px;
+            
+            text-align: center;
+            
+            color: #0B132A;
+        }
+
+        p {
+            margin-top: 20px;
+
+            width: 555px;
+            height: 60px;
+
+            font-family: 'Rubik';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 30px;
+            
+            text-align: center;
+            
+            color: #4F5665;
+        }
+
+        button {
+            margin-top: 50px;
+            
+
+            width: 250px;
+            height: 60px;
+            
+            background: #0780BE;
+            border-radius: 10px;
+
+            font-family: 'Rubik';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 25px;
+            
+            
+            color: #FFFFFF;
+        }
+    }
+
+    .Section2 {
+        padding-top: 60px;
+        margin-top: 150px;
+        height: 80vh;
+
+        background: linear-gradient(180deg, #F8F8F8 -45.04%, rgba(248, 248, 248, 0) 88.56%);
+
+        h1 {
+            margin-top: 30px;
+            width: 383.41px;
+            height: 50px;
+            
+            font-family: 'Rubik';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 35px;
+            line-height: 50px;
+            
+            text-align: center;
+            
+            color: #0B132A;
+        }
+
+        p {
+            width: 555px;
+            height: 60px;
+            left: 440.5px;
+            top: 868.55px;
+            
+            font-family: 'Rubik';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 30px;
+            
+            text-align: center;
+            
+            color: #4F5665;
+        }
+
+        .Card {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+
+            nav {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 330px;
+                height: 430px;
+
+                border: 2px solid #DDDDDD;
+                border-radius: 10px;
+
+                transition: .5s;
+
+                img {
+                    margin-top: 100px;
+                }
+
+                h3 {
+                    margin-top: 30px;
+                    
+                    font-family: 'Rubik';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 30px;
+                    
+                    text-align: center;
+                    
+                    color: #0B132A;
+                }
+
+                button {
+                    width: 177.88px;
+                    height: 45px;
+                    left: 629px;
+                    top: 1333px;
+                    
+                    border: 2px solid #0780BE;
+                    background: none;
+                    color: #0780BE;
+                    border-radius: 50px;
+
+                    transition: .5s;
+                }
+
+                &:hover {
+                    border:2px solid #0780BE;
+                    
+                    button {
+                        background-color: #0780BE;
+                        color: #FFFFFF;
+                    }
+                }
+            
+            }
+
+            
+        }
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .Home {
+        
+        .Section1 {
+            //height: 70vh;
+            //display: none;
+            
+            
+            h1 {
+                width: 100%;
+                height: unset;
+                font-size: 35px;
+            }
+
+            p {
+                width: 100%;
+            }
+        }
+
+        .Section2 {
+            height: auto;
+
+            p {
+                width: 100%;
+            }
+            
+            .Card {
+                grid-template-columns: repeat(1, 1fr);
+                margin-bottom: 50px;
+
+                nav {
+                    height: 330px;
+
+                    img {
+                        margin-top: 50px;
+                    }
+
+                    h3 {
+                        margin: 20px 0px;
+                    }
+                }
+            }
+        }
+
+        
+    }
+}
