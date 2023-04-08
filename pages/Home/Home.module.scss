@@ -145,6 +145,11 @@
                     border-radius: 50px;
 
                     transition: .5s;
+
+                    a {
+                        height: 100%;
+                        width: 100%;
+                    }
                 }
 
                 &:hover {

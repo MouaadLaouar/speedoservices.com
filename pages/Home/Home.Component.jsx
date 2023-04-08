@@ -2,6 +2,7 @@ import Style from "./Home.module.scss"
 import { Container } from "@chakra-ui/react"
 import {HomeData, CardData} from "@/Helpers/Home"
 import Image from "next/image"
+import Link from "next/link"
 
 
 export default function Home() {
@@ -26,7 +27,7 @@ export default function Home() {
                   <Image src={ e.logo } alt="logo of the service"/>
                   <h3>{ e.Title }</h3>
 
-                  <button>Select</button>
+                  <button><Link href={ e.Link }>Select</Link></button>
                 </nav>
               )
             })}

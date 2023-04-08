@@ -39,17 +39,17 @@ export default function Footer() {
               <h1>Services</h1>
               <ul>
                 <li>
-                  <Link href="/">
+                  <Link href="/Transport">
                     Transport
                   </Link>
                 </li>
                 <li>
-                  <Link href="/">
+                  <Link href="/Demenagement">
                     Déménagement
                   </Link>
                 </li>
                 <li>
-                  <Link href="/">
+                  <Link href="/Depannage">
                     Dépannage
                   </Link>
                 </li>

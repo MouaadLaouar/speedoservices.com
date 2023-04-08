@@ -14,17 +14,20 @@ const CardData = [
     {
         id: 1,
         logo: logo1,
-        Title: "Transport"
+        Title: "Transport",
+        Link: "/Transport"
     },
     {
         id: 2,
         logo: logo2,
-        Title: "Déménagement"
+        Title: "Déménagement",
+        Link: "/Demenagement"
     },
     {
         id: 3,
         logo: logo3,
-        Title: "Dépannage"
+        Title: "Dépannage",
+        Link: "/Depannage"
     }
 ]
 
