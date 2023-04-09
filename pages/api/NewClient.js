@@ -7,10 +7,10 @@ import transporter from '@/NodeMailer/NodeMailer.Confing';
 export default function handler(req, res) {
   const { FirstName, LastName, Email } = req.body;
 
-  const emailHTML = render(<NewClient FirstName={ FirstName } LastName={ LastName } />)
+  const emailHTML = render(<NewClient Data={ req.body } />)
 
   const options = {
-    from: `LAOUAR MOUAAD<${process.env.NEXT_PUBLIC_USER}>`,
+    from: `Speedo Services Support<${process.env.NEXT_PUBLIC_USER}>`,
     to: Email,
     subject: 'Welcome to Speedo Services',
     html: emailHTML,

@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     h1 {
         font-family: 'Rubik';
         font-style: normal;
@@ -14,6 +15,10 @@
         color: #000000;
 
         margin-bottom: 50px;
+    }
+
+    p {
+        margin-bottom: 30px;
     }
 }
 
