@@ -2,38 +2,117 @@ import React from 'react'
 import {
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
+  Textarea,
+  useToast
 } from '@chakra-ui/react'
-
 import { Input } from '@chakra-ui/react'
 import { Container } from '@chakra-ui/react'
 import { Button } from '@chakra-ui/react'
+import Style from './ContactUs.module.scss'
+import { ContactForm, DataContact } from '@/Helpers/ContactUs'
+import { useState } from 'react'
 
 export default function ContactUs() {
+  //const Data = ["First Name", "Last Name", "Email", "Message"]
+  const [FirstName, setFirstName] = useState('')
+  const [LastName, setLastName] = useState('')
+  const [Email, setEmail] = useState('')
+  const [Message, setMessage] = useState('')
+
+  const toast = useToast();
+
+  const Toast = (status) => {
+    toast({
+      title: 'Message Envoyer',
+      description: "Votre message a bien ete Envoyer !",
+      status: status,
+      duration: 5000,
+      isClosable: true,
+    })
+    console.log("hello")
+  }
+
+  const UpdateData = (Name, Word) => {
+    switch(Name){
+      case 'First Name':
+        setFirstName(Word);
+        break;
+      case 'Last Name':
+        setLastName(Word);
+        break;
+      case 'Email':
+        setEmail(Word);
+        break;
+      default:
+        break;
+    }
+  }
+
+
+  const SendMessage = () => {
+    fetch(process.env.NEXT_PUBLIC_CONTACT_US_API, {
+      method: "POST",
+      body: JSON.stringify({
+        FirstName,
+        LastName,
+        Email,
+        Message
+      }),
+      headers: {
+        "content-type": "application/json",
+      },
+    }).then((result) => {
+    if(result.ok) {
+      toast({
+        title: 'Message Envoyer',
+        description: "Votre message a bien ete Envoyer !",
+        position: 'top',
+        status: 'success',
+        duration: 5000,
+        isClosable: true,
+      })
+    } else {
+      toast({
+        title: 'Error',
+        description: "Please Try Later.",
+        position: 'top',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      })
+    }
+    })
+  }
+
+
+
   return (
-    <div className='ContactUs'>
-      <Container maxW="1200px" h="80vh">
-      <FormControl>
-        <FormLabel>First Name</FormLabel>
-          <Input type='text' />
-        <FormHelperText>First Name</FormHelperText>
-      </FormControl>
-      <FormControl>
-        <FormLabel>Last Name</FormLabel>
-          <Input type='text' />
-        <FormHelperText>Last Name</FormHelperText>
-      </FormControl>
-      <FormControl>
-        <FormLabel>Email</FormLabel>
-          <Input type='text' />
-        <FormHelperText>EMail</FormHelperText>
-      </FormControl>
-      <FormControl>
-        <FormLabel>Message</FormLabel>
-          <Input type='text' />
-        <FormHelperText>Message</FormHelperText>
-      </FormControl>
+    <div className={ Style.ContactUs }>
+      <Container maxW="1200px" h="auto">
+        <h1>{ DataContact.Headline }</h1>
+        <p>{ DataContact.Description}</p>
+        <Container maxW="md">
+          {
+            ContactForm.map((data, edx) => {
+              return (
+                <FormControl key={ edx } m="20px 0px">
+                  <FormLabel>{ data }</FormLabel>
+                  <Input type='text' name={ data } onChange={(e) => { UpdateData(e.target.name, e.target.value) }}/>
+                </FormControl>
+              )
+            })
+          }
+          <FormControl>
+            <FormLabel>Message</FormLabel>
+            <Textarea placeholder='' onChange={(e) => { setMessage(e.target.value )}}/>
+          </FormControl>
+
+          <nav>
+            <Button bg="#0780BE" width="100px" onClick={SendMessage}>
+              Send
+            </Button>
+          </nav>
+        </Container>
       </Container>
     </div>
   )

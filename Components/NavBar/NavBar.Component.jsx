@@ -17,6 +17,8 @@ import {
   DrawerCloseButton,
 } from '@chakra-ui/react'
 
+import NavBarData from '@/Helpers/NavBar'
+
 export default function NavBar() {
   
   const [isLargerThanMobile] = useMediaQuery('(min-width: 768px)')
@@ -29,26 +31,22 @@ export default function NavBar() {
       <Container maxW='1200px' h='100%' display="flex" justifyContent="space-between" alignItems="center">
         <div className={ Style.Logo }>
           <Image src={ logo } alt="Logo of the Website"/>
-          <h1>Speedo Services</h1>
+          <Link href="/"><h1>Speedo Services</h1></Link>
         </div>
         
         {isLargerThanMobile ? (
           <ul>
-            <li>
-              <Link href="/">About</Link>
-            </li>
-            <li>
-              <Link href="/">Features</Link>
-            </li>
-            <li>
-              <Link href="/">Pricing</Link>
-            </li>
-            <li>
-              <Link href="/">Testimonials</Link>
-            </li>
-            <li>
-              <Link href="/">Help</Link>
-            </li>
+            {
+              NavBarData.map((data, edx) => {
+                return (
+                  <li key={ edx }>
+                    <Link href={ data.Link }>
+                      { data.Name }
+                    </Link>
+                  </li>
+                )
+              })
+            }
         </ul>) : (
         <>
           <Button ref={btnRef} onClick={onOpen} colorScheme="none">
@@ -67,21 +65,17 @@ export default function NavBar() {
 
           <DrawerBody>
           <ul className={ Style.MenuMobile }>
-            <li>
-              <Link href="/" onClick={onClose}>About</Link>
-            </li>
-            <li>
-              <Link href="/" onClick={onClose}>Features</Link>
-            </li>
-            <li>
-              <Link href="/" onClick={onClose}>Pricing</Link>
-            </li>
-            <li>
-              <Link href="/" onClick={onClose}>Testimonials</Link>
-            </li>
-            <li>
-              <Link href="/" onClick={onClose}>Help</Link>
-            </li>
+            {
+              NavBarData.map((data, edx) => {
+                return (
+                  <li key={ edx }>
+                    <Link href={ data.Link } onClick={onClose}>
+                      { data.Name }
+                    </Link>
+                  </li>
+                )
+              })
+            }
         </ul>
           </DrawerBody>
 

@@ -133,11 +133,9 @@
                     color: #0B132A;
                 }
 
-                button {
+                a {
                     width: 177.88px;
                     height: 45px;
-                    left: 629px;
-                    top: 1333px;
                     
                     border: 2px solid #0780BE;
                     background: none;
@@ -146,16 +144,17 @@
 
                     transition: .5s;
 
-                    a {
-                        height: 100%;
-                        width: 100%;
-                    }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    
                 }
 
                 &:hover {
                     border:2px solid #0780BE;
                     
-                    button {
+                    a {
                         background-color: #0780BE;
                         color: #FFFFFF;
                     }

@@ -27,7 +27,7 @@ export default function Home() {
                   <Image src={ e.logo } alt="logo of the service"/>
                   <h3>{ e.Title }</h3>
 
-                  <button><Link href={ e.Link }>Select</Link></button>
+                  <Link href={ e.Link }>Select</Link>
                 </nav>
               )
             })}

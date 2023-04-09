@@ -1,0 +1,31 @@
+.ContactUs {
+    padding-top: 100px;
+    text-align: center;
+
+    h1 {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        text-align: center;
+        
+        color: #000000;
+    }
+
+    p {
+        margin: 40px 0px;
+    }
+
+    nav {
+        margin: 30px 0px;
+        Button {
+            color: #ffffff;
+
+            &:hover {
+                color: #0780BE;
+            }
+        }
+    }
+}
+
+
