@@ -7,7 +7,6 @@ import transporter from '@/NodeMailer/NodeMailer.Confing';
 export default function handler(req, res) {
 
   const emailHTML = render(<ContactUs Data={ req.body } />)
-   // dont miss to change  the email for who resive the message
   const options = {
     from: `Contact Speedo Services<contact@speedoservices.com>`,
     to: 'speedospport@gmail.com',
