@@ -4,9 +4,9 @@ import Image from 'next/image'
 import logo from '../../Assets/Vector.png'
 import Link from 'next/link'
 
-import Facebook from '../../Assets/Icons/facebook.png'
-import Instagram from '../../Assets/Icons/instagram.png'
-import Linkedin from '../../Assets/Icons/linkedin.png'
+import Facebook from '../../Assets/Icons/icons8-facebook.svg'
+import Instagram from '../../Assets/Icons/icons8-instagram.svg'
+import Linkedin from '../../Assets/Icons/icons8-linkedin.svg'
 
 
 
@@ -18,7 +18,7 @@ export default function Footer() {
           <div className={ Style.Left}>
             <nav>
               <Image src={ logo } alt="Logo of the Website"/>
-              <h1>Speedo Services</h1>
+              <Link href='/'><h1>Speedo Services</h1></Link>
             </nav>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus.</p>
             <div className={ Style.Icons }>
