@@ -10,8 +10,8 @@ export default function handler(req, res) {
   const emailHTML = render(<ContactUs Data={ req.body } />)
    // dont miss to change  the email for who resive the message
   const options = {
-    from: `Speedo Services Support<${process.env.NEXT_PUBLIC_USER}>`,
-    to: Email,
+    from: `Contact Speedo Services<contact@speedoservices.com>`,
+    to: 'speedospport@gmail.com',
     subject: 'New Message !',
     html: emailHTML,
   }
