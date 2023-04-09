@@ -60,7 +60,7 @@ export default function Footer() {
               <h1>Engage</h1>
               <ul>
                 <li>
-                  <Link href="/">
+                  <Link href="/AboutUs">
                     About Us
                   </Link>
                 </li>
