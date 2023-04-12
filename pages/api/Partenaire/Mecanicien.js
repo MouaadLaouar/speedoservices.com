@@ -30,7 +30,7 @@ apiRoute.post( async (req, res) => {
   
     ////
     const options = {
-      from: `Contact Speedo Services<contact@speedoservices.com>`,
+      from: 'Contact Speedo Services<contact@speedoservices.com>',
       to: 'speedospport@gmail.com',
       subject: 'Nouveaux Partnaire !',
       html: emailHtml,
