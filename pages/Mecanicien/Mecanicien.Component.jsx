@@ -1,18 +1,18 @@
-import Style from './Depannage.module.scss'
+import Style from './Mecanicien.module.scss'
 import { Container } from '@chakra-ui/react'
 import Customer from '@/Assets/customer.png'
 import Deal from '@/Assets/deal.png'
 import Image from 'next/image'
 import DataServices from '@/Helpers/Services'
 
-//Formulaire
-import Formulaire from '@/Components/Forms/Depannage/Formulaire.Component'
+//Formulaire 
+import Formulaire from '@/Components/Forms/Mecanicien/Formulaire.Component'
 import { useState } from 'react'
 
 
-export default function Depannage() {
-    const Title = DataServices[2].Title
-    const Desc = DataServices[2].Description
+export default function Mecanicien() {
+    const Title = DataServices[3].Title
+    const Desc = DataServices[3].Description
     const [isClient, setisClient] = useState(true)
 
   return (
@@ -27,7 +27,7 @@ export default function Depannage() {
                     <h2>Client</h2>
                 </nav>
 
-                <nav className={ `${!isClient ? Style.Active : ''}` } onClick={() => { setisClient(false) }}>
+                <nav className={ `${!isClient ? Style.Active : ''}` } onClick={() => { setisClient(false)}}>
                     <Image src={ Deal } alt="Partenaire"/>
                     <h2>Partenaire</h2>
                 </nav>

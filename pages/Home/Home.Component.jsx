@@ -12,10 +12,10 @@ export default function Home() {
       <Container maxW="1200px" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
         <h1>{ HomeData.HeadLine }</h1>
         <p>{ HomeData.Description }</p>
-        <button>Get Started</button>
+        <a href="/#Section2">Get Started</a>
       </Container>
       </section>
-      <section className={ Style.Section2 }>
+      <section className={ Style.Section2 } id="Section2">
         <Container maxW="1200px" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
           <h1>{ HomeData.HeadLine2 }</h1>
           <p>{ HomeData.Description2 }</p>

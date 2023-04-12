@@ -3,8 +3,6 @@
 
     div {
 
-        margin-top: 100px;
-
         h1 {
             font-family: 'Rubik';
             font-style: normal;
@@ -50,6 +48,15 @@
                     h2 {
                         color: #0780BE;
                     }
+                }
+                
+            }
+
+            .Active {
+                border: 2px solid #0780BE;
+
+                h2 {
+                    color: #0780BE;
                 }
             }
         }

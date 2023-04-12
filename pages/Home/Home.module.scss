@@ -35,14 +35,14 @@
             color: #4F5665;
         }
 
-        button {
+        a {
             margin-top: 50px;
             
 
             width: 250px;
             height: 60px;
             
-            background: #0780BE;
+            background: #2296DE;
             border-radius: 10px;
 
             font-family: 'Rubik';
@@ -50,6 +50,12 @@
             font-weight: 700;
             font-size: 16px;
             line-height: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            cursor: pointer;
             
             
             color: #FFFFFF;
@@ -137,9 +143,9 @@
                     width: 177.88px;
                     height: 45px;
                     
-                    border: 2px solid #0780BE;
+                    border: 2px solid #2296DE;
                     background: none;
-                    color: #0780BE;
+                    color: #2296DE;
                     border-radius: 50px;
 
                     transition: .5s;
@@ -152,10 +158,10 @@
                 }
 
                 &:hover {
-                    border:2px solid #0780BE;
+                    border:2px solid #2296DE;
                     
                     a {
-                        background-color: #0780BE;
+                        background-color: #2296DE;
                         color: #FFFFFF;
                     }
                 }

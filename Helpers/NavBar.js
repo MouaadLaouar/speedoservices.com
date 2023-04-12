@@ -3,24 +3,20 @@
 
 const NavBarData = [
     {
-        Name: "About",
+        Name: "Home",
         Link: "/"
     },
     {
-        Name: "Features",
-        Link: "/"
+        Name: "Services",
+        Link: "/#Section2"
     },
     {
-        Name: "Pricing",
-        Link: "/"
+        Name: "About Us",
+        Link: "/AboutUs"
     },
     {
-        Name: "Testimonials",
-        Link: "/"
-    },
-    {
-        Name: "Help",
-        Link: "/"
+        Name: "Contact Us",
+        Link: "/ContactUs"
     }
 ]
 

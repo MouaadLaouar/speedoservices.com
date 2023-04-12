@@ -9,9 +9,14 @@ export default function handler(req, res) {
   const emailHTML = render(<ContactUs Data={ req.body } />)
   const options = {
     from: `Contact Speedo Services<contact@speedoservices.com>`,
-    to: 'speedospport@gmail.com',
+    //to: 'speedospport@gmail.com',
+    to: 'laouarmouaad@gmail.com',
     subject: 'New Message !',
     html: emailHTML,
+    attachments: {
+      filename: 'mouaad.txt',
+      content: "HEllo MOUAAD"
+    }
   }
     
   transporter.sendMail(options).then((err, result) => {

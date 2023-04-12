@@ -53,6 +53,11 @@ export default function Footer() {
                     Dépannage
                   </Link>
                 </li>
+                <li>
+                  <Link href="/Mecanicien">
+                    Mecanicien
+                  </Link>
+                </li>
               </ul>
             </div>
 

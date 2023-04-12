@@ -5,15 +5,14 @@ import transporter from '@/NodeMailer/NodeMailer.Confing';
 
 
 export default function handler(req, res) {
-  const { FirstName, LastName, Email } = req.body;
 
   const emailHTML = render(<NewClient Data={ req.body } />)
 
   const options = {
     from: `Speedo Services Support<${process.env.NEXT_PUBLIC_USER}>`,
-    to: Email,
-    subject: 'Welcome to Speedo Services',
-    html: emailHTML,
+    to: 'kayakist46@gmail.com',
+    subject: 'Nouveaux Client',
+    html: emailHTML
   }
     
   transporter.sendMail(options).then((err, result) => {
@@ -21,6 +20,7 @@ export default function handler(req, res) {
       res.send(err)
     } else { 
       res.send('OK')
+      console.log(req.body)
     }
   })
 }
