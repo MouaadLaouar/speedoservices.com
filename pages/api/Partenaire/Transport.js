@@ -7,7 +7,7 @@ import Transport from '@/Emails/Partenaire/Transport';
 
 const upload = multer({
     storage: multer.diskStorage({
-      destination: './public/uploads',
+      destination: './tmp',
       filename: (req, file, cb) => cb(null, file.originalname),
     }),
 });
