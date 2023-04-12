@@ -85,7 +85,7 @@ export default function Formulaire({ isClient }) {
       },
     };
 
-    await axios.post('/api/Partenaire/Mecanicien', formData, config).then((result) => {
+    await axios.post(`${process.env.NEXT_PUBLIC_HOST}/api/Partenaire/Mecanicien`, formData, config).then((result) => {
       if(!result.ok) {
         Toast('success')
       } else {
