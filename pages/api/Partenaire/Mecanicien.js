@@ -7,7 +7,7 @@ import Mecanicien from '@/Emails/Partenaire/Mecanicien';
 
 const upload = multer({
     storage: multer.diskStorage({
-      destination: 'public/uploads',
+      destination: 'tmp',
       filename: (req, file, cb) => cb(null, file.originalname),
     }),
 });
@@ -21,7 +21,7 @@ const apiRoute = nextConnect({
     },
 });
 
-apiRoute.use(upload.array('theFiles'));
+apiRoute.use(upload.array('theFiles', 5));
 
 apiRoute.post( async (req, res) => {
   
