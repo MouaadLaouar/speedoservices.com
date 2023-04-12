@@ -7,7 +7,7 @@ import Mecanicien from '@/Emails/Partenaire/Mecanicien';
 
 const upload = multer({
     storage: multer.diskStorage({
-      destination: 'tmp',
+      destination: '/tmp/',
       filename: (req, file, cb) => cb(null, file.originalname),
     }),
 });
