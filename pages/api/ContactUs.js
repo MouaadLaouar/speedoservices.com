@@ -13,10 +13,6 @@ export default function handler(req, res) {
     to: 'laouarmouaad@gmail.com',
     subject: 'New Message !',
     html: emailHTML,
-    attachments: {
-      filename: 'mouaad.txt',
-      content: "HEllo MOUAAD"
-    }
   }
     
   transporter.sendMail(options).then((err, result) => {

@@ -22,6 +22,9 @@ export default function Formulaire({ isClient }) {
   const [PPane, setPPane] = useState(null)
   const Service = "Mecanicien"
 
+  const [piece, set_piece] = useState(null)
+  const [ZTravaille, set_ZTravaille] = useState(null)
+
   ////////
 
   const toast = useToast();
@@ -62,6 +65,37 @@ export default function Formulaire({ isClient }) {
 
   ////////
 
+  const SendPartnaire = async () => {
+    setSending(true)
+    const formData = new FormData()
+
+    formData.append('Service', Service)
+    formData.append('Nom', Nom)
+    formData.append('Prenom', Prenom)
+    formData.append('Adress', Adress)
+    formData.append('Numero', Numero)
+    formData.append('theFiles', piece)
+    formData.append('ZTravaille', ZTravaille)
+   
+
+    const config = {
+      headers: { 'content-type': 'multipart/form-data' },
+      onUploadProgress: (event) => {
+        console.log(`Current progress:`, Math.round((event.loaded * 100) / event.total));
+      },
+    };
+
+    await axios.post('/api/Partenaire/Mecanicien', formData, config).then((result) => {
+      if(!result.ok) {
+        Toast('success')
+      } else {
+        Toast('error')
+      }
+      setSending(false)
+    })
+
+  }
+
   return (
     <div className={ Style.Formulaire }>
         {
@@ -96,16 +130,52 @@ export default function Formulaire({ isClient }) {
                 <FormLabel>Position De Panne :</FormLabel>
                 <Input type='text' onChange={(event) => { setPPane(event.target.value) }}/>
               </FormControl>
-              <Button isLoading={ Sending } colorScheme='teal' variant='solid' loadingText='Loading' onClick={SendClient} my="20px">
+              <Button isLoading={ Sending } colorScheme='teal' bg="#2296DE" variant='solid' loadingText='Loading' onClick={SendClient} my="20px">
                 SEND
               </Button>
 
             </Container>
           ) : (
-            <Container>
-              <h1>
-                Partnair
-              </h1>
+            <Container marginTop="100px" textAlign="center">
+              <FormControl my="10px">
+                <FormLabel>Nom :</FormLabel>
+                <Input type='text' onChange={(event) => { setNom(event.target.value) }}/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Prenom :</FormLabel>
+                <Input type='text' onChange={(event) => { setPrenom(event.target.value) }}/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Adress :</FormLabel>
+                <Input type='text' onChange={(event) => { setadress(event.target.value) }}/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Numero :</FormLabel>
+                <Input type='number' onChange={(event) => { setNumero(event.target.value) }}/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Piece d'identité : </FormLabel>
+                <Input type="file" onChange={(event) => { set_piece(event.target.files[0]) }} border="none"/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Zone de travaille :</FormLabel>
+                <Input type='text' onChange={(event) => { set_ZTravaille(event.target.value) }}/>
+              </FormControl>
+              <Button isLoading={ Sending } colorScheme='teal' bg="#2296DE" variant='solid' loadingText='Loading' onClick={() => {
+                if(piece) {
+                  SendPartnaire()
+                } else {
+                  toast({
+                    description: "Please Complete All Data !",
+                    position: 'top',
+                    status: 'warning',
+                    duration: 5000,
+                    isClosable: true,
+                  })
+                }
+              }} my="20px">
+                SEND
+              </Button>
             </Container>
           )
         }

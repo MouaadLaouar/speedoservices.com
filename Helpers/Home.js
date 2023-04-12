@@ -1,6 +1,7 @@
 import logo1 from '../Assets/delivery-truck.png'
 import logo2 from '../Assets/moving-truck.png'
 import logo3 from '../Assets/shipping.png'
+import logo4 from '../Assets/mecanism.png'
 
 
 const HomeData = {
@@ -28,6 +29,12 @@ const CardData = [
         logo: logo3,
         Title: "Dépannage",
         Link: "/Depannage"
+    },
+    {
+        id: 4,
+        logo: logo4,
+        Title: 'Mecanicien',
+        Link: '/Mecanicien'
     }
 ]
 

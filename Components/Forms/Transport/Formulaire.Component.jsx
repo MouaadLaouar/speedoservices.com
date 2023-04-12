@@ -8,7 +8,8 @@ import {
   Input,
   Select,
   useToast,
-  Button
+  Button,
+  Switch
 } from '@chakra-ui/react'
 
 
@@ -25,8 +26,6 @@ export default function Formulaire({ isClient }) {
       isClosable: true,
     })
   }
-  // const [Image, setImage] = useState(null)
-  // const [Image2, setImage2] = useState(null)
   ///////
   const [Nom, setNom] = useState(null)
   const [Prenom, setPrenom] = useState(null)
@@ -36,22 +35,25 @@ export default function Formulaire({ isClient }) {
   const [TypeVT, setTypeVT] = useState(null)
   const Service = "Transport"
   ////////
+  const [Cart_Gris, set_Cart_Gris] = useState(null)
+  const [Permis, set_Permis] = useState(null)
+  const [Inssurance, set_Inssurance] = useState(null)
+  const [Register_De_Commerce, set_Register_De_Commerce] = useState(null)
+  const [Tonage, setTonage] = useState(null)
+  ////////
+  const [Nom_Chauffeur, setNom_CHauffeur] = useState(null)
+  const [Prenom_Chauffeur, setPrenom_Chauffeur] = useState(null)
+  const [Adress_Chauffeur, setadress_Chauffeur] = useState(null)
+  const [Numero_Chauffeur, setNumero_Chauffeur] = useState(null)
+
+  const [Chauffeur, setChauffeur] = useState(false)
+  ////////
   const [Sending, setSending] = useState(false)
 
-  // http://localhost:3000/api/test
 
   const SendClient = async () => {
     setSending(true)
     const formData = new FormData()
-    // formData.append('theFiles', Image)
-    // formData.append('theFiles', Image2)
-
-    // const config = {
-    //   headers: { 'content-type': 'multipart/form-data' },
-    //   onUploadProgress: (event) => {
-    //     console.log(`Current progress:`, Math.round((event.loaded * 100) / event.total));
-    //   },
-    // };
 
     await axios.post('/api/NewClient', {
       Service,
@@ -69,8 +71,44 @@ export default function Formulaire({ isClient }) {
       }
       setSending(false)
     })
+  }
 
-    
+  const SendPartnaire = async () => {
+    setSending(true)
+    const formData = new FormData()
+
+    formData.append('Service', Service)
+    formData.append('Nom', Nom)
+    formData.append('Prenom', Prenom)
+    formData.append('Adress', Adress)
+    formData.append('Numero', Numero)
+    formData.append('TypeVT', TypeVT)
+    formData.append('Tonage', Tonage)
+    formData.append('theFiles', Cart_Gris)
+    formData.append('theFiles', Permis)
+    formData.append('theFiles', Inssurance)
+    formData.append('theFiles', Register_De_Commerce)
+    formData.append('Nom_Chauffeur', Nom_Chauffeur)
+    formData.append('Prenom_Chauffeur', Prenom_Chauffeur)
+    formData.append('Adress_Chauffeur', Adress_Chauffeur)
+    formData.append('Numero_Chauffeur', Numero_Chauffeur)
+
+    const config = {
+      headers: { 'content-type': 'multipart/form-data' },
+      onUploadProgress: (event) => {
+        console.log(`Current progress:`, Math.round((event.loaded * 100) / event.total));
+      },
+    };
+
+    await axios.post('/api/Partenaire/Transport', formData, config).then((result) => {
+      if(!result.ok) {
+        Toast('success')
+      } else {
+        Toast('error')
+      }
+      setSending(false)
+    })
+
   }
 
   return (
@@ -103,51 +141,101 @@ export default function Formulaire({ isClient }) {
                 <option value='option2'>Option 2</option>
                 <option value='option3'>Option 3</option>
               </Select>
-              <Button isLoading={ Sending } colorScheme='teal' variant='solid' loadingText='Loading' onClick={SendClient} my="20px">
+              <Button isLoading={ Sending } colorScheme='teal' variant='solid' bg="#2296DE" loadingText='Loading' onClick={SendClient} my="20px">
                 SEND
               </Button>
 
             </Container>
           ) : (
-            <Container>
-              <h1>
-                Partnair
-              </h1>
+            <Container marginTop="100px" textAlign="center">
+              <FormControl my="10px">
+                <FormLabel>Nom :</FormLabel>
+                <Input type='text' onChange={(event) => { setNom(event.target.value) }}/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Prenom :</FormLabel>
+                <Input type='text' onChange={(event) => { setPrenom(event.target.value) }}/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Adress :</FormLabel>
+                <Input type='text' onChange={(event) => { setadress(event.target.value) }}/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Numero :</FormLabel>
+                <Input type='number' onChange={(event) => { setNumero(event.target.value) }}/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Carte Gris : </FormLabel>
+                <Input type="file" onChange={(event) => { set_Cart_Gris(event.target.files[0]) }} border="none"/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Permis : </FormLabel>
+                <Input type="file" onChange={(event) => { set_Permis(event.target.files[0]) }} border="none"/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Insurance : </FormLabel>
+                <Input type="file" onChange={(event) => { set_Inssurance(event.target.files[0]) }} border="none"/>
+              </FormControl>
+              <FormControl my="15px">
+                <FormLabel>Register De Commerce : </FormLabel>
+                <Input type="file" onChange={(event) => { set_Register_De_Commerce(event.target.files[0]) }} border="none"/>
+              </FormControl>
+              <Select placeholder='Type de Vehicule' display="flex" alignItems="center" justifyContent="space-between" onChange={(event) => { setTypeVT(event.target.value) }}>
+                <option value='option1'>Option 1</option>
+                <option value='option2'>Option 2</option>
+                <option value='option3'>Option 3</option>
+              </Select>
+              <FormControl my="15px">
+                <FormLabel>Tonage : </FormLabel>
+                <Input type="text" onChange={(event) => { setTonage(event.target.value) }} />
+              </FormControl>
+              <FormControl display='flex' alignItems='center'>
+                <FormLabel htmlFor='email-alerts' mb='0'>
+                  Vous avez un chauffeur ?
+                </FormLabel>
+                <Switch id='email-alerts' onChange={(event) => { setChauffeur(event.target.checked) }}/>
+              </FormControl>
+              {
+                Chauffeur ? (
+                  <>
+                  <FormControl my="15px">
+                    <FormLabel>Nom Du Chauffeur : </FormLabel>
+                    <Input type="text" onChange={(event) => { setNom_CHauffeur(event.target.value) }}/>
+                  </FormControl>
+                  <FormControl my="15px">
+                    <FormLabel>Prenom Du Chauffeur : </FormLabel>
+                    <Input type="text" onChange={(event) => { setPrenom_Chauffeur(event.target.value) }}/>
+                  </FormControl>
+                  <FormControl my="15px">
+                    <FormLabel>Adress Du Chauffeur : </FormLabel>
+                    <Input type="text" onChange={(event) => { setadress_Chauffeur(event.target.value) }}/>
+                  </FormControl>
+                  <FormControl my="15px">
+                    <FormLabel>Numero Du Chauffeur : </FormLabel>
+                    <Input type="text" onChange={(event) => { setNumero_Chauffeur(event.target.value) }}/>
+                  </FormControl>
+                  </>
+                  
+                ) : ('')
+              }
+              <Button isLoading={ Sending } colorScheme='teal' bg="#2296DE" variant='solid' loadingText='Loading' onClick={() => {
+                if(Cart_Gris && Permis && Inssurance && Register_De_Commerce) {
+                  SendPartnaire()
+                } else {
+                  toast({
+                    description: "Please Complete All Data !",
+                    position: 'top',
+                    status: 'warning',
+                    duration: 5000,
+                    isClosable: true,
+                  })
+                }
+              }} my="20px">
+                SEND
+              </Button>
             </Container>
           )
         }
     </div>
   )
 }
-// Client
-
-// Nom
-// Prenom,
-// Adress,
-// Numero,
-// Marchandise,
-// Type de vahicule
-
-
-// Partnaire
-
-// Nom
-// Prenom,
-// Adress,
-// Numero,
-
-// import 4 picture
-// -> cart geris 
-// -> permis 
-// -> inssurence 
-// -> register de comerce 
-
-// type de vehicule
-
-// tonage
-
-// [] check box () // if ther ea chauufeur work with the partnaire
-// Nom,
-// Prenom,
-// permis,
-// numero

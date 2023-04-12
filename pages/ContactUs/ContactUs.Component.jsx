@@ -3,7 +3,7 @@ import {
   FormControl,
   FormLabel,
   Textarea,
-  useToast
+  useToast,
 } from '@chakra-ui/react'
 import { Input } from '@chakra-ui/react'
 import { Container } from '@chakra-ui/react'
@@ -18,6 +18,7 @@ export default function ContactUs() {
   const [LastName, setLastName] = useState('')
   const [Email, setEmail] = useState('')
   const [Message, setMessage] = useState('')
+  const [isSending, setisSending] = useState(false)
 
   const toast = useToast();
 
@@ -25,11 +26,11 @@ export default function ContactUs() {
     toast({
       title: 'Message Envoyer',
       description: "Votre message a bien ete Envoyer !",
+      position: 'top',
       status: status,
       duration: 5000,
       isClosable: true,
     })
-    console.log("hello")
   }
 
   const UpdateData = (Name, Word) => {
@@ -50,6 +51,7 @@ export default function ContactUs() {
 
 
   const SendMessage = () => {
+    setisSending(true)
     fetch(process.env.NEXT_PUBLIC_CONTACT_US_API, {
       method: "POST",
       body: JSON.stringify({
@@ -63,24 +65,11 @@ export default function ContactUs() {
       },
     }).then((result) => {
     if(result.ok) {
-      toast({
-        title: 'Message Envoyer',
-        description: "Votre message a bien ete Envoyer !",
-        position: 'top',
-        status: 'success',
-        duration: 5000,
-        isClosable: true,
-      })
+      Toast('success')
     } else {
-      toast({
-        title: 'Error',
-        description: "Please Try Later.",
-        position: 'top',
-        status: 'error',
-        duration: 5000,
-        isClosable: true,
-      })
+      Toast('error')
     }
+    setisSending(false)
     })
   }
 
@@ -108,7 +97,7 @@ export default function ContactUs() {
           </FormControl>
 
           <nav>
-            <Button bg="#0780BE" width="100px" onClick={SendMessage}>
+            <Button isLoading={ isSending } bg="#0780BE" width="100px" onClick={SendMessage}>
               Send
             </Button>
           </nav>
