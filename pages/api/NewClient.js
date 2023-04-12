@@ -10,7 +10,7 @@ export default function handler(req, res) {
 
   const options = {
     from: `Speedo Services Support<${process.env.NEXT_PUBLIC_USER}>`,
-    to: process.env.NEXT_PUBLIC_USER,
+    to: 'speedospport@gmail.com',
     subject: 'Nouveaux Client',
     html: emailHTML
   }
