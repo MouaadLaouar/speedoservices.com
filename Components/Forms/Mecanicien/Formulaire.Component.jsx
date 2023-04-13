@@ -10,6 +10,7 @@ import {
   Button,
   Container
 } from '@chakra-ui/react'
+import wilayas from '@/Helpers/Wilayas';
 
 
 export default function Formulaire({ isClient }) {
@@ -110,7 +111,7 @@ export default function Formulaire({ isClient }) {
                 <Input type='text' onChange={(event) => { setPrenom(event.target.value) }}/>
               </FormControl>
               <FormControl my="15px">
-                <FormLabel>Adress :</FormLabel>
+                <FormLabel>Address :</FormLabel>
                 <Input type='text' onChange={(event) => { setadress(event.target.value) }}/>
               </FormControl>
               <FormControl my="15px">
@@ -146,7 +147,7 @@ export default function Formulaire({ isClient }) {
                 <Input type='text' onChange={(event) => { setPrenom(event.target.value) }}/>
               </FormControl>
               <FormControl my="15px">
-                <FormLabel>Adress :</FormLabel>
+                <FormLabel>Address :</FormLabel>
                 <Input type='text' onChange={(event) => { setadress(event.target.value) }}/>
               </FormControl>
               <FormControl my="15px">
@@ -157,10 +158,15 @@ export default function Formulaire({ isClient }) {
                 <FormLabel>Piece d'identité : </FormLabel>
                 <Input type="file" onChange={(event) => { set_piece(event.target.files[0]) }} border="none"/>
               </FormControl>
-              <FormControl my="15px">
-                <FormLabel>Zone de travaille :</FormLabel>
-                <Input type='text' onChange={(event) => { set_ZTravaille(event.target.value) }}/>
-              </FormControl>
+              <Select my="15px" placeholder='Zone de travaille' onChange={(event) => { set_ZTravaille(event.target.value) }}>
+                {
+                  wilayas.map((data, edx) => {
+                    return (
+                      <option key={edx + 1} value={data.name}>{ data.code } - { data.name }</option>
+                    )
+                  })
+                }
+              </Select>
               <Button isLoading={ Sending } colorScheme='teal' bg="#2296DE" variant='solid' loadingText='Loading' onClick={() => {
                 if(piece) {
                   SendPartnaire()

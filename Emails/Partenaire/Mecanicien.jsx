@@ -8,7 +8,7 @@ export default function Mecanicien({ Data }) {
       <h1>Service : { Service } </h1>
       <p>Nom : { Nom }</p>
       <p>Prenom : { Prenom } </p>
-      <p>Adress : { Adress } </p>
+      <p>Address : { Adress } </p>
       <p>Numero : { Numero } </p>
       <p>Zone de travaille : { ZTravaille }</p>
     </div>

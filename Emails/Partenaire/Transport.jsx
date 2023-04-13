@@ -8,7 +8,7 @@ export default function Transport({ Data }) {
       <h1>Service : { Service } </h1>
       <p>Nom : { Nom }</p>
       <p>Prenom : { Prenom } </p>
-      <p>Adress : { Adress } </p>
+      <p>Address : { Adress } </p>
       <p>Numero : { Numero } </p>
       <p>Type De Vehicule : { TypeVT } </p>
       <p>Tonage : { Tonage } </p>

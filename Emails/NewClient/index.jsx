@@ -27,7 +27,7 @@ export default function NewClient({ Data }) {
       { Service ? <h1>Service : { Service }</h1> : ''}
       { Nom ? <h1>Nom : { Nom }</h1> : ''}
       { Prenom ? <h1>Prenom : { Prenom }</h1> : ''}
-      { Adress ? <h1>Adress : { Adress }</h1> : ''}
+      { Adress ? <h1>Address : { Adress }</h1> : ''}
       { Numero ? <h1>Numero : { Numero }</h1> : ''}
       { Marchandise ? <h1>Marchandise : { Marchandise }</h1> : ''}
       { TypeVT ? <h1> Type De Vehicule : { TypeVT }</h1> : ''}

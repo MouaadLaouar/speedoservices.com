@@ -125,7 +125,7 @@ export default function Formulaire({ isClient }) {
                 <Input type='text' onChange={(event) => { setPrenom(event.target.value) }}/>
               </FormControl>
               <FormControl my="15px">
-                <FormLabel>Adress :</FormLabel>
+                <FormLabel>Address :</FormLabel>
                 <Input type='text' onChange={(event) => { setadress(event.target.value) }}/>
               </FormControl>
               <FormControl my="15px">
@@ -157,7 +157,7 @@ export default function Formulaire({ isClient }) {
                 <Input type='text' onChange={(event) => { setPrenom(event.target.value) }}/>
               </FormControl>
               <FormControl my="15px">
-                <FormLabel>Adress :</FormLabel>
+                <FormLabel>Address :</FormLabel>
                 <Input type='text' onChange={(event) => { setadress(event.target.value) }}/>
               </FormControl>
               <FormControl my="15px">
