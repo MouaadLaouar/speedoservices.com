@@ -67,6 +67,7 @@
         margin-top: 150px;
         margin-bottom: 50px;
         height: auto;
+        
 
         background: linear-gradient(180deg, #F8F8F8 -45.04%, rgba(248, 248, 248, 0) 88.56%);
 
@@ -114,8 +115,8 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                width: 330px;
-                height: 430px;
+                width: 230px;
+                height: 330px;
 
                 border: 2px solid #DDDDDD;
                 border-radius: 10px;
@@ -123,7 +124,7 @@
                 transition: .5s;
 
                 img {
-                    margin-top: 100px;
+                    margin-top: 50px;
                 }
 
                 h3 {
