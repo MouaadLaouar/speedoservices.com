@@ -21,6 +21,11 @@
             height: 60px;
             width: 60px;
         }
+
+        a {
+            display: flex;
+            align-items: center;
+        }
     }
 
     ul {
@@ -34,6 +39,9 @@
             font-weight: 400;
             font-size: 16px;
             line-height: 19px;
+
+            display: flex;
+            align-items: center;
             
             color: #4F5665;
         }

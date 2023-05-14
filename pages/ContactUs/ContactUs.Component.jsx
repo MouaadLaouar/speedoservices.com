@@ -13,7 +13,9 @@ import { ContactForm, DataContact } from '@/Helpers/ContactUs'
 import { useState } from 'react'
 
 export default function ContactUs() {
-  //const Data = ["First Name", "Last Name", "Email", "Message"]
+
+  const { Headline, Description } = DataContact();
+
   const [FirstName, setFirstName] = useState('')
   const [LastName, setLastName] = useState('')
   const [Email, setEmail] = useState('')
@@ -78,8 +80,8 @@ export default function ContactUs() {
   return (
     <div className={ Style.ContactUs }>
       <Container maxW="1200px" h="auto">
-        <h1>{ DataContact.Headline }</h1>
-        <p>{ DataContact.Description}</p>
+        <h1>{ Headline }</h1>
+        <p>{ Description}</p>
         <Container maxW="md">
           {
             ContactForm.map((data, edx) => {

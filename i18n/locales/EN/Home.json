@@ -1,0 +1,18 @@
+{
+    "Hero": {
+        "headline": "Fast, Reliable Delivery Services for Any Need",
+        "paragraph": "At SpeedoServices, we know that your time is valuable. That's why we offer lightning-fast delivery services that you can depend on",
+        "button": "get Started"
+    },
+    "Services": {
+        "headline": "Choose Your Services",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam blandit sem.",
+        "services": [
+            "Transport",
+            "Déménagement",
+            "Dépannage",
+            "Mecanicien"
+        ],
+        "button": "Select"
+    }
+}

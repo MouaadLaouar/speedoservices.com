@@ -3,40 +3,55 @@ import logo2 from '../Assets/moving-truck.png'
 import logo3 from '../Assets/shipping.png'
 import logo4 from '../Assets/mecanism.png'
 
+import { useTranslation } from 'react-i18next'
 
-const HomeData = {
-    HeadLine: "Fast, Reliable Delivery Services for Any Need",
-    Description: "At SpeedoServices, we know that your time is valuable. That's why we offer lightning-fast delivery services that you can depend on",
-    HeadLine2: "Choose Your Services",
-    Description2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam blandit sem."
+const HomeData = () => {
+    const { t } = useTranslation()
+
+
+    return {
+    //HeadLine: "Fast, Reliable Delivery Services for Any Need",
+    HeadLine: t('Home:Hero:headline'),
+    Description: t('Home:Hero:paragraph'),
+    HeadLine2: t('Home:Services:headline'),
+    Description2: t('Home:Services:paragraph')
+    }
 }
 
-const CardData = [
+
+
+const CardData = () => { 
+    const { t } = useTranslation();
+    
+    const Data = [
     {
         id: 1,
         logo: logo1,
-        Title: "Transport",
+        Title: t('Home:Services:services:0'),
         Link: "/Transport"
     },
     {
         id: 2,
         logo: logo2,
-        Title: "Déménagement",
+        Title: t('Home:Services:services:1'),
         Link: "/Demenagement"
     },
     {
         id: 3,
         logo: logo3,
-        Title: "Dépannage",
+        Title: t('Home:Services:services:2'),
         Link: "/Depannage"
     },
     {
         id: 4,
         logo: logo4,
-        Title: 'Mecanicien',
+        Title: t('Home:Services:services:3'),
         Link: '/Mecanicien'
     }
-]
+    ]
+
+    return Data;
+}
 
 
 export { HomeData, CardData } 

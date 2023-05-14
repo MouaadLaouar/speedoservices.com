@@ -1,10 +1,12 @@
 import React from 'react'
 import Style from './NavBar.module.scss'
-import { Container, useMediaQuery, useDisclosure, Button } from '@chakra-ui/react'
+import { Container, useMediaQuery, useDisclosure, Button, Select } from '@chakra-ui/react'
 import { useRef } from 'react'
 import Image from 'next/image'
 import logo from "../../Assets/Vector.png"
 import Link from 'next/link'
+
+import { useTranslation } from 'react-i18next'
 
 import Menu from '../../Assets/Icons/menu.png'
 
@@ -20,6 +22,8 @@ import {
 import NavBarData from '@/Helpers/NavBar'
 
 export default function NavBar() {
+  const { t, i18n } = useTranslation();
+  const Data = NavBarData()
   
   const [isLargerThanMobile] = useMediaQuery('(min-width: 768px)')
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -37,7 +41,7 @@ export default function NavBar() {
         {isLargerThanMobile ? (
           <ul>
             {
-              NavBarData.map((data, edx) => {
+              Data.map((data, edx) => {
                 return (
                   <li key={ edx }>
                     <Link href={ data.Link }>
@@ -47,6 +51,12 @@ export default function NavBar() {
                 )
               })
             }
+            <li>
+            <Select border="none" onChange={(e) => { i18n.changeLanguage(e.target.value) }}>
+              <option value='en'>EN</option>
+              <option value='fr'>FR</option>
+            </Select>
+            </li>
         </ul>) : (
         <>
           <Button ref={btnRef} onClick={onOpen} colorScheme="none">
@@ -66,7 +76,7 @@ export default function NavBar() {
           <DrawerBody>
           <ul className={ Style.MenuMobile }>
             {
-              NavBarData.map((data, edx) => {
+              Data.map((data, edx) => {
                 return (
                   <li key={ edx }>
                     <Link href={ data.Link } onClick={onClose}>
@@ -76,6 +86,12 @@ export default function NavBar() {
                 )
               })
             }
+            <li>
+              <Select border="none" paddingLeft="0" onChange={(e) => { i18n.changeLanguage(e.target.value) }}>
+                <option value='en'>EN</option>
+                <option value='fr'>FR</option>
+              </Select>
+            </li>
         </ul>
           </DrawerBody>
 

@@ -8,9 +8,13 @@ import Facebook from '../../Assets/Icons/icons8-facebook.svg'
 import Instagram from '../../Assets/Icons/icons8-instagram.svg'
 import Linkedin from '../../Assets/Icons/icons8-linkedin.svg'
 
+import { useTranslation } from 'react-i18next'
+
 
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <div className={ Style.Footer }>
       <Container maxW="1200px">
@@ -20,7 +24,7 @@ export default function Footer() {
               <Image src={ logo } alt="Logo of the Website"/>
               <Link href='/'><h1>Speedo Services</h1></Link>
             </nav>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus.</p>
+            <p>{ t('Footer:paragraph') }</p>
             <div className={ Style.Icons }>
               <Link href="/">
                 <Image src={ Facebook } alt="Facebook Url"/>
@@ -36,42 +40,44 @@ export default function Footer() {
 
           <div className={ Style.Right }>
             <div>
-              <h1>Services</h1>
+              <h1>{ t('Footer:Headlines:Services') }</h1>
               <ul>
                 <li>
                   <Link href="/Transport">
-                    Transport
+                  { t('Footer:Services:0') }
                   </Link>
                 </li>
                 <li>
                   <Link href="/Demenagement">
-                    Déménagement
+                  { t('Footer:Services:1') }
                   </Link>
                 </li>
                 <li>
                   <Link href="/Depannage">
-                    Dépannage
+                  { t('Footer:Services:2') }
                   </Link>
                 </li>
                 <li>
                   <Link href="/Mecanicien">
-                    Mecanicien
+                  { t('Footer:Services:3') }
                   </Link>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h1>Engage</h1>
+              <h1>
+                { t('Footer:Headlines:Engage') }
+              </h1>
               <ul>
                 <li>
                   <Link href="/AboutUs">
-                    About Us
+                  { t('Footer:Engage:0') }
                   </Link>
                 </li>
                 <li>
                   <Link href="/ContactUs">
-                    Contact Us
+                  { t('Footer:Engage:1') }
                   </Link>
                 </li>
               </ul>

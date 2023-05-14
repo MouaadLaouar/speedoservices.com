@@ -1,0 +1,17 @@
+{
+    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In faucibus.",
+    "Services": [
+    "Transport",
+    "Déménagement",
+    "Dépannage",
+    "Mécanicien"
+    ],
+    "Engage": [
+    "À propos de nous",
+    "Nous contacter"
+    ],
+    "Headlines": {
+    "Services": "Services",
+    "Engage": "Engage"
+    }
+    }

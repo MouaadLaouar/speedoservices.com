@@ -1,0 +1,18 @@
+{
+    "Hero": {
+        "headline": "Services de livraison rapides et fiables pour tous vos besoins",
+        "paragraph": "Chez SpeedoServices, nous savons que votre temps est précieux. C'est pourquoi nous proposons des services de livraison ultra-rapides sur lesquels vous pouvez compter.",
+        "button": "Commencer"
+    },
+    "Services": {
+        "headline": "Choisissez vos services",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam blandit sem.",
+        "services": [
+            "Transport",
+            "Déménagement",
+            "Dépannage",
+            "Mécanicien"
+        ],
+        "button": "Sélectionner"
+    }
+}

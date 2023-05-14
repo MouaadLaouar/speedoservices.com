@@ -1,23 +1,27 @@
+import { useTranslation } from "react-i18next";
 
+const NavBarData = () => {
+    const { t } = useTranslation();
 
-
-const NavBarData = [
+    return [
     {
-        Name: "Home",
+        Name: t('NavBar:menu:0'),
         Link: "/"
     },
     {
-        Name: "Services",
+        Name: t('NavBar:menu:1'),
         Link: "/#Section2"
     },
     {
-        Name: "About Us",
+        Name: t('NavBar:menu:2'),
         Link: "/AboutUs"
     },
     {
-        Name: "Contact Us",
+        Name: t('NavBar:menu:3'),
         Link: "/ContactUs"
     }
 ]
+
+}
 
 export default NavBarData;
