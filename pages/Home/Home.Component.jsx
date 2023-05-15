@@ -25,7 +25,7 @@ export default function Home() {
       <section className={ Style.Section2 } id="Section2">
         <Container maxW="1200px" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
           <h1>{ HeadLine2 }</h1>
-          <p>{ Description2 }</p>
+          {/* <p>{ Description2 }</p> */}
 
           <div className={ Style.Card }>
             { Data.map((e) => {
