@@ -46,7 +46,7 @@ const CardData = () => {
         id: 4,
         logo: logo4,
         Title: t('Home:Services:services:3'),
-        Link: '/Mecanicien'
+        Link: '/GeneralServices'
     }
     ]
 

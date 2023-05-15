@@ -10,8 +10,9 @@ import Formulaire from '@/Components/Forms/Demenagement/Formulaire.Component'
 
 
 export default function Demenagement() {
-    const Title = DataServices[1].Title
-    const Desc = DataServices[1].Description
+    const Data = DataServices();
+    const Title = Data[1].Title
+    const Desc = Data[1].Description
     const [isClient, setisClient] = useState(true)
 
   return (

@@ -11,8 +11,9 @@ import { useState } from 'react'
 
 
 export default function Transport() {
-    const Title = DataServices[0].Title
-    const Desc = DataServices[0].Description
+    const Data = DataServices();
+    const Title = Data[0].Title
+    const Desc = Data[0].Description
     const [isClient, setisClient] = useState(true)
 
   return (

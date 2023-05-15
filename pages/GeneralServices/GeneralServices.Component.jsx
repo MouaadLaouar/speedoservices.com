@@ -1,4 +1,4 @@
-import Style from './Mecanicien.module.scss'
+import Style from './GeneralServices.module.scss'
 import { Container } from '@chakra-ui/react'
 import Customer from '@/Assets/customer.png'
 import Deal from '@/Assets/deal.png'
@@ -11,8 +11,9 @@ import { useState } from 'react'
 
 
 export default function Mecanicien() {
-    const Title = DataServices[3].Title
-    const Desc = DataServices[3].Description
+    const Data = DataServices();
+    const Title = Data[3].Title
+    const Desc = Data[3].Description
     const [isClient, setisClient] = useState(true)
 
   return (

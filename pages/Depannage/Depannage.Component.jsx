@@ -11,8 +11,9 @@ import { useState } from 'react'
 
 
 export default function Depannage() {
-    const Title = DataServices[2].Title
-    const Desc = DataServices[2].Description
+    const Data = DataServices();
+    const Title = Data[2].Title
+    const Desc = Data[2].Description
     const [isClient, setisClient] = useState(true)
 
   return (

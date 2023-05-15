@@ -29,13 +29,14 @@ export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef()
 
-
   return (
     <div className={ Style.NavBar }>
       <Container maxW='1200px' h='100%' display="flex" justifyContent="space-between" alignItems="center">
         <div className={ Style.Logo }>
-          <Image src={ logo } alt="Logo of the Website"/>
-          <Link href="/"><h1>Speedo Services</h1></Link>
+          <Link href="/">
+            <Image src={ logo } alt="Logo of the Website"/>
+            <h1>Speedo Services</h1>
+          </Link>
         </div>
         
         {isLargerThanMobile ? (
@@ -52,9 +53,10 @@ export default function NavBar() {
               })
             }
             <li>
-            <Select border="none" onChange={(e) => { i18n.changeLanguage(e.target.value) }}>
-              <option value='en'>EN</option>
-              <option value='fr'>FR</option>
+            <Select placeholder={ i18n.language } paddingLeft="0" border="none" onChange={(e) => { i18n.changeLanguage(e.target.value) }}>
+              {
+                i18n.language === "EN" ? (<option value='FR'>FR</option>) : (<option value='EN'>EN</option>)
+              }
             </Select>
             </li>
         </ul>) : (
@@ -87,9 +89,10 @@ export default function NavBar() {
               })
             }
             <li>
-              <Select border="none" paddingLeft="0" onChange={(e) => { i18n.changeLanguage(e.target.value) }}>
-                <option value='en'>EN</option>
-                <option value='fr'>FR</option>
+              <Select placeholder={ i18n.language } paddingLeft="0" border="none" onChange={(e) => { i18n.changeLanguage(e.target.value), onClose() }}>
+              {
+                i18n.language === "EN" ? (<option value='FR'>FR</option>) : (<option value='EN'>EN</option>)
+              } 
               </Select>
             </li>
         </ul>

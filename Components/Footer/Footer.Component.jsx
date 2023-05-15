@@ -21,8 +21,10 @@ export default function Footer() {
         <div className={ Style.Content }>
           <div className={ Style.Left}>
             <nav>
-              <Image src={ logo } alt="Logo of the Website"/>
-              <Link href='/'><h1>Speedo Services</h1></Link>
+              <Link href='/'>
+                <Image src={ logo } alt="Logo of the Website"/>
+                <h1>Speedo Services</h1>
+              </Link>
             </nav>
             <p>{ t('Footer:paragraph') }</p>
             <div className={ Style.Icons }>
@@ -58,7 +60,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/Mecanicien">
+                  <Link href="/GeneralServices">
                   { t('Footer:Services:3') }
                   </Link>
                 </li>
