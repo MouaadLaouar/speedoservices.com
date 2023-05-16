@@ -32,15 +32,15 @@ const CardData = () => {
     },
     {
         id: 2,
-        logo: logo2,
-        Title: t('Home:Services:services:1'),
-        Link: "/Demenagement"
-    },
-    {
-        id: 3,
         logo: logo3,
         Title: t('Home:Services:services:2'),
         Link: "/Depannage"
+    },
+    {
+        id: 3,
+        logo: logo2,
+        Title: t('Home:Services:services:1'),
+        Link: "/Demenagement"
     },
     {
         id: 4,

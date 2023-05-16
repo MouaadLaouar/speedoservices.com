@@ -6,6 +6,7 @@ import Link from "next/link"
 
 /// i18n
 import { useTranslation } from "react-i18next"
+import { useEffect, useState } from "react"
 
 
 export default function Home() {
@@ -13,12 +14,53 @@ export default function Home() {
   const { HeadLine, Description, HeadLine2, Description2 } = HomeData()
   const Data  = CardData();
 
+  const [hero, sethero] = useState({
+        id: 3,
+        text: "It's Easy",
+        Description: "Any professionnel service you need ??? Speedo Service"
+  })
+
+  useEffect(() => {
+    const Interval = setInterval(() => {
+      sethero((hero) => {
+        if (hero.id === 1) {
+          return {
+            id: 2,
+            text: "ساهلة",
+            Description: "تحتاج لخدمة احترافية ؟؟؟   سبيدو سرفيس"
+          }
+        } else if (hero.id === 2) {
+          return {
+            id: 3,
+            text: "It's Easy",
+            Description: "Any professionnel service you need ??? Speedo Service"
+          }
+        } else {
+          return {
+            id: 1,
+            text: "C'est Facil",
+            Description: "Pour un service professionnel ??? Speedo Service"
+          }
+        }
+      })
+    }, 5000)
+
+    return () => clearInterval(Interval)
+  }, [])
+  
+  
+
+
   return (
     <div className={ Style.Home }>
       <section className={ Style.Section1 }>
       <Container maxW="1200px" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
-        <h1>{ HeadLine }</h1>
-        <p>{ Description }</p>
+        {/* <h1>{ HeadLine }</h1>
+        <p>{ Description }</p> */}
+      
+          <h1>{ hero.text}</h1>
+          <p>{ hero.Description}</p>
+        
         <a href="/#Section2">Get Started</a>
       </Container>
       </section>
