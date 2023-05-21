@@ -58,8 +58,10 @@ export default function Home() {
         {/* <h1>{ HeadLine }</h1>
         <p>{ Description }</p> */}
       
-          <h1>{ hero.text}</h1>
-          <p>{ hero.Description}</p>
+        
+        <h1 className={ Style.test }>{ hero.text}</h1>
+        <p className={ Style.test1 }>{ hero.Description}</p>
+        
         
         <a href="/#Section2">Get Started</a>
       </Container>

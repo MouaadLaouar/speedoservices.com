@@ -14,7 +14,7 @@
             
             text-align: center;
             
-            color: #0B132A;
+            //color: #0B132A;
 
             transition: opacity 0.5s;
         }
@@ -23,6 +23,7 @@
             margin-top: 20px;
 
             width: 555px;
+            height: 60px;
 
             font-family: 'Rubik';
             font-style: normal;
@@ -170,6 +171,62 @@
 
             
         }
+    }
+}
+
+
+.test {
+    animation-name: text_animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.test1 {
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-name: text_animation1;
+}
+
+
+@keyframes text_animation {
+    0%,
+    10% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    20% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    80% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    95%,
+    100% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+}
+
+@keyframes text_animation1 {
+    0%,
+    10% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    20% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    80% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    95%,
+    100% {
+        transform: translateX(-50px);
+        opacity: 0;
     }
 }
 
