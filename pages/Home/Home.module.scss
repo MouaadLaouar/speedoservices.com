@@ -176,15 +176,11 @@
 
 
 .test {
-    animation-name: text_animation;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
+    animation: text_animation 5s infinite;
 }
 
 .test1 {
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-name: text_animation1;
+    animation: text_animation1 5s infinite;
 }
 
 
@@ -202,7 +198,7 @@
         transform: translateX(0px);
         opacity: 1;
     }
-    90%,
+    95%,
     100% {
         transform: translateX(50px);
         opacity: 0;

@@ -8,9 +8,13 @@ export default function App({ Component, pageProps }) {
   return (
     <ChakraProvider>
       <I18nextProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        {
+          process.env.NEXT_PUBLIC_MAINTENANCE_MODE === "1" ? (
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          ) : (<h1>Hors Service</h1>)
+        }
       </I18nextProvider>
     </ChakraProvider>
   )
