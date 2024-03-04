@@ -15,5 +15,3 @@ gmail: nwjxfadulpwepigo
 
 
 -------
-NEXT_PUBLIC_USER=laouarmouaad@gmail.com
-NEXT_PUBLIC_PASS=ayexfedtonuogrud
